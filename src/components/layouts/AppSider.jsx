@@ -13,7 +13,10 @@ export default function AppSider() {
   return (
     <Layout.Sider width="25%" style={siderStyle}>
       {assets.map((asset) => (
-        <Card key={asset.id} style={{ marginBottom: "1rem" }}>
+        <Card
+          key={asset.id}
+          style={{ marginBottom: "1rem", backgroundColor: "#f0f2f5" }}
+        >
           <Statistic
             title={capitalize(asset.id)}
             value={asset.totalAmount}

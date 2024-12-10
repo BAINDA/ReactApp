@@ -44,7 +44,7 @@ export default function AppHeader() {
         onSelect={handleSelect}
         onClick={() => setSelected((prev) => !prev)}
         style={{ width: 250 }}
-        value="press / to open"
+        value="Press / to open"
         options={crypto.map((coin) => ({
           label: coin.name,
           value: coin.id,
@@ -63,7 +63,7 @@ export default function AppHeader() {
       />
 
       <Button type="primary" onClick={() => setDrawer(true)}>
-        Add asset text
+        Add Asset
       </Button>
 
       <Modal open={modal} onCancel={() => setModal(false)} footer={null}>
