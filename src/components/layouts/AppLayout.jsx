@@ -1,5 +1,5 @@
 import { Layout, Spin } from "antd";
-import AppHeader from "./appheader";
+import AppHeader from "./AppHeader"; // Ensure the correct case and path
 import AppSider from "./AppSider";
 import AppContent from "./AppContent";
 import { useContext } from "react";
