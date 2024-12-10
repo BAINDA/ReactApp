@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   Select,
   Space,
@@ -24,21 +24,24 @@ const validateMessages = {
 
 export default function AddAssetForm({ onClose }) {
   const [form] = Form.useForm();
-  const { crypto } = useCrypto();
+  const { crypto, addAsset } = useCrypto();
   const [coin, setCoin] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+  const assetRef = useRef();
 
   if (submitted) {
-    <Result
-      status="success"
-      title="New Asset Added"
-      subTitle={`Added ${42} of ${coin.name} by price ${24}`}
-      extra={[
-        <Button type="primary" key="console" onClick={onClose}>
-          Close
-        </Button>,
-      ]}
-    />;
+    return (
+      <Result
+        status="success"
+        title="New Asset Added"
+        subTitle={`Added ${assetRef.current.amount} of ${coin.name} by price ${assetRef.current.price}`}
+        extra={[
+          <Button type="primary" key="console" onClick={onClose}>
+            Close
+          </Button>,
+        ]}
+      />
+    );
   }
 
   if (!coin) {
@@ -68,7 +71,15 @@ export default function AddAssetForm({ onClose }) {
 
   function onFinish(values) {
     console.log("Success:", values);
+    const newAsset = {
+      id: coin.id,
+      amount: values.amount,
+      price: values.Price,
+      date: values.date?.$d ?? new Date(),
+    };
     setSubmitted(true);
+    assetRef.current = newAsset;
+    addAsset(newAsset);
   }
 
   function handleAmountChange(value) {
