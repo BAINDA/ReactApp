@@ -2,7 +2,17 @@
 
 Welcome to **CryptoGB**, your ultimate cryptocurrency dashboard! This project offers a sleek and intuitive interface to track real-time cryptocurrency prices, trends, and market statistics.
 
-[Preview the application here](https://cryptogb.netlify.app/)
+---
+
+## 🌟 **Preview**
+
+Here’s a quick preview of the **CryptoGB** dashboard:
+
+![CryptoGB Preview](https://github.com/user-attachments/assets/b3de6609-7594-47b3-a81a-3612e71d2b4a)
+
+👉 **[Demo Link](https://cryptogb.netlify.app/)**
+
+---
 
 ## 🚀 Features
 
